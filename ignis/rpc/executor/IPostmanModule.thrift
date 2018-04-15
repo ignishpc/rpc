@@ -3,7 +3,7 @@ namespace java org.ignis.rpc.executor
 namespace py ignis.rpc.executor.postman
 
 
-service IPostman{
+service IPostmanModule{
 
 }
 
