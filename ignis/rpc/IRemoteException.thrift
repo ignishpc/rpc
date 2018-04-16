@@ -3,7 +3,7 @@ namespace java org.ignis.rpc
 namespace py ignis.rpc.exception
 
 
-exception IExecutorException{
+exception IRemoteException{
 	1: required string name;
 	2: required string stack;
 }
