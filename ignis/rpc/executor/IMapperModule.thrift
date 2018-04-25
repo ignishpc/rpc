@@ -7,6 +7,6 @@ include "../IRemoteException.thrift"
 include "IFunction.thrift"
 
 service IMapperModule{
-	void orderedMap(1: IFunction.IFunction funct) throws (1:IRemoteException.IRemoteException ex),
-	void unorderedMap(1: IFunction.IFunction funct) throws (1:IRemoteException.IRemoteException ex);
+	void _map(1: IFunction.IFunction funct) throws (1:IRemoteException.IRemoteException ex),
+	void streamingMap(1: IFunction.IFunction funct, 2: bool ordered) throws (1:IRemoteException.IRemoteException ex);
 }
