@@ -4,6 +4,6 @@ namespace py ignis.rpc.exception
 
 
 exception IRemoteException{
-	1: required string cause;
+	1: required string message;
 	2: required string stack;
 }
