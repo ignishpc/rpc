@@ -5,7 +5,7 @@ namespace py ignis.rpc.executor.reducer
 cpp_include "<unordered_map>"
 
 include "../IRemoteException.thrift"
-include "IFunction.thrift"
+include "../IFunction.thrift"
 
 service IReducerModule{
 	map cpp_type "std::unordered_map<int64_t, int64_t>"  <i64, i64> getKeys(1: IFunction.IFunction funct, 2: bool single) throws (1:IRemoteException.IRemoteException ex),
