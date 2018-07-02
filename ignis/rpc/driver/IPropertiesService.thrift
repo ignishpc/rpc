@@ -14,6 +14,5 @@ service IPropertiesService{
 	void fromMap(1: i64 id, 2:map<string, string> _map)throws (1:IRemoteException.IRemoteException ex),
 	void toFile(1: i64 id, 2: string path)throws (1:IRemoteException.IRemoteException ex),
 	void fromFile(1: i64 id, 2: string path)throws (1:IRemoteException.IRemoteException ex);
-	void destroy(1: i64 id)throws (1:IRemoteException.IRemoteException ex);
 	void reset(1: i64 id)throws (1:IRemoteException.IRemoteException ex);
 }
