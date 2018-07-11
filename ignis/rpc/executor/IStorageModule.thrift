@@ -8,5 +8,7 @@ include "../IRemoteException.thrift"
 service IStorageModule{
 	void cache(1: i64 id, 2: string storage) throws (1:IRemoteException.IRemoteException ex),
 	void uncache(1: i64 id) throws (1:IRemoteException.IRemoteException ex),
-	void load(1: i64 id) throws (1:IRemoteException.IRemoteException ex),
+	void restore(1: i64 id) throws (1:IRemoteException.IRemoteException ex),
+	void saveContext(1: i64 id) throws (1:IRemoteException.IRemoteException ex),
+	void loadContext(1: i64 id) throws (1:IRemoteException.IRemoteException ex);
 }
