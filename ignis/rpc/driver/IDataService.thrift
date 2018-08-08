@@ -17,6 +17,7 @@ service IDataService{
 	IDataId _map(1: IDataId data, 2: ISourceFunction.ISourceFunction _function) throws (1:IRemoteException.IRemoteException ex),
 	IDataId streamingMap(1: IDataId data, 2: ISourceFunction.ISourceFunction _function, 3: bool ordered) throws (1:IRemoteException.IRemoteException ex),
 	IDataId reduceByKey(1: IDataId data, 2: ISourceFunction.ISourceFunction _function) throws (1:IRemoteException.IRemoteException ex),
+	IDataId shuffle(1: IDataId data) throws (1:IRemoteException.IRemoteException ex),
 	void saveAsTextFile(1: IDataId data, 2: string path, 3: bool join) throws (1:IRemoteException.IRemoteException ex),
 	void saveAsJsonFile(1: IDataId data, 2: string path, 3: bool join) throws (1:IRemoteException.IRemoteException ex);
 }
