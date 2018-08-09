@@ -14,6 +14,7 @@ struct IDataId{
 
 service IDataService{
 	void keep(1: IDataId data, 2: i8 level) throws (1:IRemoteException.IRemoteException ex),
+	void setName(1: IDataId data, 2: string name) throws (1:IRemoteException.IRemoteException ex),
 	IDataId _map(1: IDataId data, 2: ISourceFunction.ISourceFunction _function) throws (1:IRemoteException.IRemoteException ex),
 	IDataId streamingMap(1: IDataId data, 2: ISourceFunction.ISourceFunction _function, 3: bool ordered) throws (1:IRemoteException.IRemoteException ex),
 	IDataId reduceByKey(1: IDataId data, 2: ISourceFunction.ISourceFunction _function) throws (1:IRemoteException.IRemoteException ex),
