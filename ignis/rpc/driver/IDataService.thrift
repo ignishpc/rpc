@@ -29,6 +29,8 @@ service IDataService{
 	binary take(1: IDataId data, 2: i64 n, 3: bool light) throws (1:IRemoteException.IRemoteException ex),
 	binary takeSample(1: IDataId data, 2: i64 n, 3: bool withRemplacement, 4: i32 seed, 5: bool light) throws (1:IRemoteException.IRemoteException ex),
 	binary collect(1: IDataId data, 2: bool light) throws (1:IRemoteException.IRemoteException ex),
+	IDataId sortBy(1: IDataId data, 2: ISource.ISource funct, 3: bool ascending) throws (1:IRemoteException.IRemoteException ex),
+	IDataId sort(1: IDataId data, 2: bool ascending) throws (1:IRemoteException.IRemoteException ex),
 	void saveAsTextFile(1: IDataId data, 2: string path, 3: bool join) throws (1:IRemoteException.IRemoteException ex),
 	void saveAsJsonFile(1: IDataId data, 2: string path, 3: bool join) throws (1:IRemoteException.IRemoteException ex),
 	void cache(1: IDataId data)  throws (1:IRemoteException.IRemoteException ex);
