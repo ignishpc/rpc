@@ -24,6 +24,7 @@ service IDataService{
 	IDataId streamingKeyBy(1: IDataId data, 2: ISource.ISource _function, 3: bool ordered) throws (1:IRemoteException.IRemoteException ex),
 	IDataId reduceByKey(1: IDataId data, 2: ISource.ISource _function) throws (1:IRemoteException.IRemoteException ex),
 	IDataId values(1: IDataId data) throws (1:IRemoteException.IRemoteException ex),
+	i64 count(1: IDataId data) throws (1:IRemoteException.IRemoteException ex),
 	IDataId shuffle(1: IDataId data) throws (1:IRemoteException.IRemoteException ex),
 	IDataId parallelize() throws (1:IRemoteException.IRemoteException ex),
 	list<binary> take(1: IDataId data, 2: i64 n, 3: bool light) throws (1:IRemoteException.IRemoteException ex),
