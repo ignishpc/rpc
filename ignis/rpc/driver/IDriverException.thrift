@@ -1,9 +1,9 @@
 namespace cpp ignis.rpc
 namespace java org.ignis.rpc
-namespace py ignis.rpc.executor.exception
+namespace py ignis.rpc.driver.exception
 
 
-exception IExecutorException{
+exception IDriverException{
 	1: required string message;
 	2: required string _cause;
 }

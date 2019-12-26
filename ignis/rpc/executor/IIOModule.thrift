@@ -8,7 +8,11 @@ include "../ISource.thrift"
 
 service IIOModule{
 
-	void textFile(1: string path, 2: i64 partitions),
+	i64 partitionCount() throws (1:IExecutorException.IExecutorException ex),
+
+	i64 partitionApproxSize() throws (1:IExecutorException.IExecutorException ex),
+
+	void textFile(1: string path, 2: i64 partitions) throws (1:IExecutorException.IExecutorException ex),
 
 	void openPartitionObjectFile(1: string path, 2: i64 first, 3: i64 partitions) throws (1:IExecutorException.IExecutorException ex),
 
