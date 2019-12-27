@@ -8,9 +8,9 @@ include "../ISource.thrift"
 
 service IMathModule{
 
-	void sample(1: bool withReplacement, 2: double fraction, 3: i64 seed) throws (1:IExecutorException.IExecutorException ex),
-	
-	void takeSample(1: bool withReplacement, 2: double fraction, 3: i64 seed) throws (1:IExecutorException.IExecutorException ex),
+	void sample(1: bool withReplacement, 2: double fraction, 3: i32 seed) throws (1:IExecutorException.IExecutorException ex),
+
+	void takeSample(1: bool withReplacement, 2: double fraction, 3: i32 seed) throws (1:IExecutorException.IExecutorException ex),
 
 	i64 count() throws (1:IExecutorException.IExecutorException ex),
 
