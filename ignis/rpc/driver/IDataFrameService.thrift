@@ -43,7 +43,8 @@ service IDataFrameService{
 
 	/*General Action*/
 	i64 reduce(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
-	i64 treeReduce(1: IDataFrameId id, 2: ISource.ISource src, 3: i64 depth) throws (1:IDriverException.IDriverException ex),
+	i64 treeReduce(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	i64 treeReduce3(1: IDataFrameId id, 2: ISource.ISource src, 3: i64 depth) throws (1:IDriverException.IDriverException ex),
 	i64 collect(1: IDataFrameId id) throws (1:IDriverException.IDriverException ex),
 	i64 aggregate(1: IDataFrameId id, 2: ISource.ISource seqOp, 3: ISource.ISource combOp) throws (1:IDriverException.IDriverException ex),
 	i64 treeAggregate(1: IDataFrameId id, 2: ISource.ISource seqOp, 3: ISource.ISource combOp) throws (1:IDriverException.IDriverException ex),
