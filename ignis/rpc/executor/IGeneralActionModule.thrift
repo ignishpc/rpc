@@ -14,6 +14,8 @@ service IGeneralActionModule{
 
 	void collect() throws (1:IExecutorException.IExecutorException ex),
 
+	void aggregate(1: ISource.ISource seqOp, 2: ISource.ISource combOp) throws (1:IExecutorException.IExecutorException ex),
+
 	void treeAggregate(1: ISource.ISource seqOp, 2: ISource.ISource combOp, 3: i64 depth) throws (1:IExecutorException.IExecutorException ex),
 
 	void fold(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),

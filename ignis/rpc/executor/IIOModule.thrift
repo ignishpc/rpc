@@ -20,6 +20,14 @@ service IIOModule{
 
 	void partitionObjectFile4(1: string path, 2: i64 first, 3: i64 partitions, 4: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
+	void partitionTextFile(1: string path, 2: i64 first, 3: i64 partitions) throws (1:IExecutorException.IExecutorException ex),
+
+	void partitionTextFile4(1: string path, 2: i64 first, 3: i64 partitions, 4: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
+	void partitionJsonFile(1: string path, 2: i64 first, 3: i64 partitions) throws (1:IExecutorException.IExecutorException ex),
+
+	void partitionJsonFile4(1: string path, 2: i64 first, 3: i64 partitions, 4: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
 	void saveAsPartitionObjectFile(1: string path, 2: i8 compression, 4: i64 first) throws (1:IExecutorException.IExecutorException ex),
 
 	void saveAsTextFile(1: string path, 2: i64 first) throws (1:IExecutorException.IExecutorException ex),
