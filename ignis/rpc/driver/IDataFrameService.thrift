@@ -23,9 +23,9 @@ service IDataFrameService{
 	IDataFrameId repartition(1: IDataFrameId id, 2: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId coalesce(1: IDataFrameId id, 2: i64 numPartitions, 3: bool shuffle) throws (1:IDriverException.IDriverException ex),
 	i64 partitions(1: IDataFrameId id) throws (1:IDriverException.IDriverException ex),
-	void saveAsPartitionObjectFile(1: IDataFrameId id, 2: string path, 3: i8 compression) throws (1:IDriverException.IDriverException ex),
+	void saveAsObjectFile(1: IDataFrameId id, 2: string path, 3: i8 compression) throws (1:IDriverException.IDriverException ex),
 	void saveAsTextFile(1: IDataFrameId id, 2: string path) throws (1:IDriverException.IDriverException ex),
-	void saveAsJsonFile(1: IDataFrameId id, 2: string path) throws (1:IDriverException.IDriverException ex),
+	void saveAsJsonFile(1: IDataFrameId id, 2: string path, 3: bool pretty) throws (1:IDriverException.IDriverException ex),
 
 	/*General*/
 	IDataFrameId map_(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
