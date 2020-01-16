@@ -1,5 +1,5 @@
-namespace cpp ignis.rpc
-namespace java org.ignis.rpc
+namespace cpp ignis.rpc.driver
+namespace java org.ignis.rpc.driver
 namespace py ignis.rpc.driver.exception
 
 

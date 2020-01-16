@@ -42,24 +42,24 @@ service IDataFrameService{
 	IDataFrameId sortBy3(1: IDataFrameId id, 2: ISource.ISource src, 3:  bool ascending, 4: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
 
 	/*General Action*/
-	i64 reduce(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
-	i64 treeReduce(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
-	i64 treeReduce3(1: IDataFrameId id, 2: ISource.ISource src, 3: i64 depth) throws (1:IDriverException.IDriverException ex),
-	i64 collect(1: IDataFrameId id) throws (1:IDriverException.IDriverException ex),
-	i64 aggregate(1: IDataFrameId id, 2: ISource.ISource seqOp, 3: ISource.ISource combOp) throws (1:IDriverException.IDriverException ex),
-	i64 treeAggregate(1: IDataFrameId id, 2: ISource.ISource seqOp, 3: ISource.ISource combOp) throws (1:IDriverException.IDriverException ex),
-	i64 treeAggregate3(1: IDataFrameId id, 2: ISource.ISource seqOp, 3: ISource.ISource combOp, 4: i64 depth) throws (1:IDriverException.IDriverException ex),
-	i64 fold(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
-	i64 take(1: IDataFrameId id, 2: i64 num) throws (1:IDriverException.IDriverException ex),
+	i64 reduce(1: IDataFrameId id, 2: ISource.ISource src, 3: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
+	i64 treeReduce(1: IDataFrameId id, 2: ISource.ISource src, 3: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
+	i64 treeReduce4(1: IDataFrameId id, 2: ISource.ISource src, 3: i64 depth, 4: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
+	i64 collect(1: IDataFrameId id, 2: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
+	i64 aggregate(1: IDataFrameId id, 2: ISource.ISource seqOp, 3: ISource.ISource combOp, 4: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
+	i64 treeAggregate(1: IDataFrameId id, 2: ISource.ISource seqOp, 3: ISource.ISource combOp, 4: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
+	i64 treeAggregate5(1: IDataFrameId id, 2: ISource.ISource seqOp, 3: ISource.ISource combOp, 4: i64 depth, 5: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
+	i64 fold(1: IDataFrameId id, 2: ISource.ISource src, 3: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
+	i64 take(1: IDataFrameId id, 2: i64 num, 3: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
 	void foreach_(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	void foreachPartition(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
-	i64 top(1: IDataFrameId id, 2: i64 num) throws (1:IDriverException.IDriverException ex),
-	i64 top2(1: IDataFrameId id, 2: i64 num, 3: ISource.ISource cmp) throws (1:IDriverException.IDriverException ex),
+	i64 top(1: IDataFrameId id, 2: i64 num, 3: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
+	i64 top4(1: IDataFrameId id, 2: i64 num, 3: ISource.ISource cmp, 4: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
 
 	/*Math*/
 	IDataFrameId sample(1: IDataFrameId id, 2: bool withReplacement, 3: double fraction, 4: i32 seed) throws (1:IDriverException.IDriverException ex),
-	i64 takeSample(1: IDataFrameId id, 2: bool withReplacement, 3: i64 num, 4: i32 seed) throws (1:IDriverException.IDriverException ex),
+	i64 takeSample(1: IDataFrameId id, 2: bool withReplacement, 3: i64 num, 4: i32 seed, 5: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
 	i64 count(1: IDataFrameId id) throws (1:IDriverException.IDriverException ex),
-	i64 max(1: IDataFrameId id, 2: ISource.ISource cmp) throws (1:IDriverException.IDriverException ex),
-	i64 min(1: IDataFrameId id, 2: ISource.ISource cmp) throws (1:IDriverException.IDriverException ex);
+	i64 max(1: IDataFrameId id, 2: ISource.ISource cmp, 3: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
+	i64 min(1: IDataFrameId id, 2: ISource.ISource cmp, 3: ISource.ISource tp) throws (1:IDriverException.IDriverException ex);
 }
