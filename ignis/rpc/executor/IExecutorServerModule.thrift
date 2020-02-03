@@ -6,7 +6,7 @@ namespace py ignis.rpc.executor.server
 include "../IExecutorException.thrift"
 
 service IExecutorServerModule{
-	void updateProperties(1: map<string, string> properties) throws (1:IExecutorException.IExecutorException ex),
+	void start(1: map<string, string> properties) throws (1:IExecutorException.IExecutorException ex),
 
 	void stop() throws (1:IExecutorException.IExecutorException ex),
 
