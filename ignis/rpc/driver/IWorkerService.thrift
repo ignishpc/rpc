@@ -29,6 +29,6 @@ service IWorkerService{
 	IDataFrameService.IDataFrameId partitionObjectFile(1: IWorkerId id, 2: string path) throws (1:IDriverException.IDriverException ex),
 	IDataFrameService.IDataFrameId partitionObjectFile3(1: IWorkerId id, 2: string path, 3: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameService.IDataFrameId partitionTextFile(1: IWorkerId id, 2: string path) throws (1:IDriverException.IDriverException ex),
-	IDataFrameService.IDataFrameId partitionJsonFile(1: IWorkerId id, 2: string path) throws (1:IDriverException.IDriverException ex),
-	IDataFrameService.IDataFrameId partitionJsonFile3(1: IWorkerId id, 2: string path, 3: ISource.ISource src) throws (1:IDriverException.IDriverException ex);
+	IDataFrameService.IDataFrameId partitionJsonFile3a(1: IWorkerId id, 2: string path, 3: bool objectMapping) throws (1:IDriverException.IDriverException ex),
+	IDataFrameService.IDataFrameId partitionJsonFile3b(1: IWorkerId id, 2: string path, 3: ISource.ISource src) throws (1:IDriverException.IDriverException ex);
 }

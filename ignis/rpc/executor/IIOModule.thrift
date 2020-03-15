@@ -22,9 +22,9 @@ service IIOModule{
 
 	void partitionTextFile(1: string path, 2: i64 first, 3: i64 partitions) throws (1:IExecutorException.IExecutorException ex),
 
-	void partitionJsonFile(1: string path, 2: i64 first, 3: i64 partitions) throws (1:IExecutorException.IExecutorException ex),
+	void partitionJsonFile4a(1: string path, 2: i64 first, 3: i64 partitions, 4: bool objectMapping) throws (1:IExecutorException.IExecutorException ex),
 
-	void partitionJsonFile4(1: string path, 2: i64 first, 3: i64 partitions, 4: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+	void partitionJsonFile4b(1: string path, 2: i64 first, 3: i64 partitions, 4: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
 	void saveAsObjectFile(1: string path, 2: i8 compression, 3: i64 first) throws (1:IExecutorException.IExecutorException ex),
 
