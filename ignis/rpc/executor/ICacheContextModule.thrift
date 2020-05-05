@@ -10,6 +10,8 @@ service ICacheContextModule{
 
 	i64 saveContext() throws (1:IExecutorException.IExecutorException ex),
 
+	void clearContext() throws (1:IExecutorException.IExecutorException ex),
+
 	void loadContext(1: i64 id) throws (1:IExecutorException.IExecutorException ex),
 
 	void cache(1: i64 id, 2: i8 level) throws (1:IExecutorException.IExecutorException ex),

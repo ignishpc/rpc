@@ -8,6 +8,8 @@ include "../ISource.thrift"
 
 service IIOModule{
 
+	void loadClass(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
 	i64 partitionCount() throws (1:IExecutorException.IExecutorException ex),
 
 	i64 partitionApproxSize() throws (1:IExecutorException.IExecutorException ex),
