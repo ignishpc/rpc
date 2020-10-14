@@ -35,6 +35,7 @@ service IDataFrameService{
 	IDataFrameId mapPartitions(1: IDataFrameId id, 2: ISource.ISource src, 3:  bool preservesPartitioning) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId mapPartitionsWithIndex(1: IDataFrameId id, 2: ISource.ISource src, 3:  bool preservesPartitioning) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId mapExecutor(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId mapExecutorTo(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId groupBy(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId groupBy2(1: IDataFrameId id, 2: ISource.ISource src, 3: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId sort(1: IDataFrameId id, 2: bool ascending) throws (1:IDriverException.IDriverException ex),

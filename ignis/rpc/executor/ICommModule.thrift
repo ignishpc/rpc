@@ -36,5 +36,11 @@ service ICommModule{
 
 	void driverScatter(1: string id, 2: i64 partitions) throws (1:IExecutorException.IExecutorException ex),
 
-	void driverScatter3(1: string id, 2: i64 partitions, 3: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex);
+	void driverScatter3(1: string id, 2: i64 partitions, 3: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
+	void send(1: string id, 2: i64 partition, 3: i64 dest, 4: i64 tag)  throws (1:IExecutorException.IExecutorException ex),
+
+	void recv(1: string id, 2: i64 partition, 3: i64 source, 4: i64 tag)  throws (1:IExecutorException.IExecutorException ex),
+
+	void recv5(1: string id, 2: i64 partition, 3: i64 source, 4: i64 tag, 5: ISource.ISource src)  throws (1:IExecutorException.IExecutorException ex);
 }

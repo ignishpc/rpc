@@ -21,6 +21,8 @@ service IGeneralModule{
 
 	void mapExecutor(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
+	void mapExecutorTo(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
 	void groupBy(1: ISource.ISource src, 2:  i64 numPartitions) throws (1:IExecutorException.IExecutorException ex),
 
 	void sort(1: bool ascending) throws (1:IExecutorException.IExecutorException ex),
