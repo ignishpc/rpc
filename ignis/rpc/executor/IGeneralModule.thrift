@@ -40,6 +40,8 @@ service IGeneralModule{
 
 	void groupByKey(1: i64 numPartitions) throws (1:IExecutorException.IExecutorException ex),
 
+	void groupByKey2(1: i64 numPartitions, 2: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
 	void reduceByKey(1: ISource.ISource src, 2: i64 numPartitions, 3: bool localReduce) throws (1:IExecutorException.IExecutorException ex),
 
 	void aggregateByKey(1: ISource.ISource zero, 2: ISource.ISource seqOp, 3: i64 numPartitions) throws (1:IExecutorException.IExecutorException ex),
