@@ -95,6 +95,6 @@ service IDataFrameService{
 
 	/*Math*/
 	IDataFrameId sampleByKey(1: IDataFrameId id, 2: bool withReplacement, 3: ISource.ISource fractions, 4: i32 seed) throws (1:IDriverException.IDriverException ex),
-	i64 countByKey(1: IDataFrameId id) throws (1:IDriverException.IDriverException ex),
-	i64 countByValue(1: IDataFrameId id) throws (1:IDriverException.IDriverException ex);
+	i64 countByKey(1: IDataFrameId id, 2: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
+	i64 countByValue(1: IDataFrameId id, 2: ISource.ISource tp) throws (1:IDriverException.IDriverException ex);
 }

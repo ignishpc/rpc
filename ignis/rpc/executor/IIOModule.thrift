@@ -12,6 +12,8 @@ service IIOModule{
 
 	i64 partitionCount() throws (1:IExecutorException.IExecutorException ex),
 
+	list<i64> countByPartition() throws (1:IExecutorException.IExecutorException ex),
+
 	i64 partitionApproxSize() throws (1:IExecutorException.IExecutorException ex),
 
 	void textFile(1: string path) throws (1:IExecutorException.IExecutorException ex),
