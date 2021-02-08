@@ -6,6 +6,8 @@ namespace py ignis.rpc.driver.cluster
 include "IDriverException.thrift"
 
 service IClusterService{
+	void start(1: i64 id),
+	void destroy(1: i64 id),
 	i64 newInstance0() throws (1:IDriverException.IDriverException ex),
 	i64 newInstance1a(1: string name) throws (1:IDriverException.IDriverException ex),
 	i64 newInstance1b(1: i64 properties) throws (1:IDriverException.IDriverException ex),

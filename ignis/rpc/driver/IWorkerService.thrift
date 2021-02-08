@@ -13,6 +13,8 @@ struct IWorkerId{
 }
 
 service IWorkerService{
+	void start(1: IWorkerId id),
+	void destroy(1: IWorkerId id),
 	IWorkerId newInstance(1: i64 id, 2: string type) throws (1:IDriverException.IDriverException ex),
 	IWorkerId newInstance3a(1: i64 id, 2: string name, 3: string type) throws (1:IDriverException.IDriverException ex),
 	IWorkerId newInstance3b(1: i64 id, 2: string type, 3: i32 cores) throws (1:IDriverException.IDriverException ex),
