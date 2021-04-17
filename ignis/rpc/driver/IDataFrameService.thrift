@@ -54,6 +54,7 @@ service IDataFrameService{
 	i64 take(1: IDataFrameId id, 2: i64 num, 3: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
 	void foreach_(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	void foreachPartition(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	void foreachExecutor(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	i64 top(1: IDataFrameId id, 2: i64 num, 3: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
 	i64 top4(1: IDataFrameId id, 2: i64 num, 3: ISource.ISource cmp, 4: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
 	i64 takeOrdered(1: IDataFrameId id, 2: i64 num, 3: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),

@@ -7,6 +7,8 @@ include "../IExecutorException.thrift"
 include "../ISource.thrift"
 
 service IGeneralModule{
+	void executeTo(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
 	void map_(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
 	void filter(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),

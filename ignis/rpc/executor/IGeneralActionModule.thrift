@@ -8,6 +8,8 @@ include "../ISource.thrift"
 
 service IGeneralActionModule{
 
+	void execute(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
 	void reduce(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
 	void treeReduce(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
@@ -27,6 +29,8 @@ service IGeneralActionModule{
 	void foreach_(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
 	void foreachPartition(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
+	void foreachExecutor(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
 	void top(1: i64 num) throws (1:IExecutorException.IExecutorException ex),
 

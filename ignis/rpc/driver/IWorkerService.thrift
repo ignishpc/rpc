@@ -32,5 +32,13 @@ service IWorkerService{
 	IDataFrameService.IDataFrameId partitionObjectFile3(1: IWorkerId id, 2: string path, 3: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameService.IDataFrameId partitionTextFile(1: IWorkerId id, 2: string path) throws (1:IDriverException.IDriverException ex),
 	IDataFrameService.IDataFrameId partitionJsonFile3a(1: IWorkerId id, 2: string path, 3: bool objectMapping) throws (1:IDriverException.IDriverException ex),
-	IDataFrameService.IDataFrameId partitionJsonFile3b(1: IWorkerId id, 2: string path, 3: ISource.ISource src) throws (1:IDriverException.IDriverException ex);
+	IDataFrameService.IDataFrameId partitionJsonFile3b(1: IWorkerId id, 2: string path, 3: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	void loadLibrary(1: IWorkerId id, 2: string lib) throws (1:IDriverException.IDriverException ex),
+	void execute(1: IWorkerId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	IDataFrameService.IDataFrameId executeTo(1: IWorkerId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+
+	void voidCall(1: IWorkerId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	void voidCall3(1: IWorkerId id, 2: IDataFrameService.IDataFrameId data, 3: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	IDataFrameService.IDataFrameId call(1: IWorkerId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	IDataFrameService.IDataFrameId call3(1: IWorkerId id, 2: IDataFrameService.IDataFrameId data, 3: ISource.ISource src) throws (1:IDriverException.IDriverException ex);
 }
