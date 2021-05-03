@@ -1,6 +1,7 @@
 namespace cpp ignis.rpc.executor
 namespace java org.ignis.rpc.executor
 namespace py ignis.rpc.executor.general
+namespace go ignis.rpc.executor
 
 
 include "../IExecutorException.thrift"

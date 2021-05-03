@@ -1,6 +1,7 @@
 namespace cpp ignis.rpc
 namespace java org.ignis.rpc
 namespace py ignis.rpc.source
+namespace go ignis.rpc
 
 union IEncoded {
 	1: string name,
