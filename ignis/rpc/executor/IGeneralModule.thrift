@@ -36,6 +36,18 @@ service IGeneralModule{
 
 	void sortBy3(1: ISource.ISource src, 2:  bool ascending, 3:  i64 numPartitions) throws (1:IExecutorException.IExecutorException ex),
 
+	void union_(1: string other) throws (1:IExecutorException.IExecutorException ex),
+
+	void union2(1: string other, 2: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
+	void join(1: string other, 2:  i64 numPartitions) throws (1:IExecutorException.IExecutorException ex),
+
+	void join3(1: string other, 2:  i64 numPartitions, 3: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
+	void distinct(1: i64 numPartitions) throws (1:IExecutorException.IExecutorException ex),
+
+	void distinct2(1: i64 numPartitions, 2: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
 	/*Keys-Value*/
 	void flatMapValues(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 

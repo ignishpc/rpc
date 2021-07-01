@@ -15,6 +15,8 @@ service ICacheContextModule{
 
 	void loadContext(1: i64 id) throws (1:IExecutorException.IExecutorException ex),
 
+	void loadContextAsVariable(1: i64 id, 2: string name) throws (1:IExecutorException.IExecutorException ex),
+
 	void cache(1: i64 id, 2: i8 level) throws (1:IExecutorException.IExecutorException ex),
 
 	void loadCache(1: i64 id) throws (1:IExecutorException.IExecutorException ex);

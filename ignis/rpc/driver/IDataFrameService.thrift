@@ -43,6 +43,18 @@ service IDataFrameService{
 	IDataFrameId sort2(1: IDataFrameId id, 2: bool ascending, 3:  i64 numPartitions) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId sortBy(1: IDataFrameId id, 2: ISource.ISource src, 3:  bool ascending) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId sortBy3(1: IDataFrameId id, 2: ISource.ISource src, 3:  bool ascending, 4: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId union_(1: IDataFrameId id, 2: IDataFrameId other) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId union3a(1: IDataFrameId id, 2: IDataFrameId other, 3: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId union3b(1: IDataFrameId id, 2: IDataFrameId other, 3: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId union4(1: IDataFrameId id, 2: IDataFrameId other, 3: i64 numPartitions, 4: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId join(1: IDataFrameId id, 2: IDataFrameId other) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId join3a(1: IDataFrameId id, 2: IDataFrameId other, 3: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId join3b(1: IDataFrameId id, 2: IDataFrameId other, 3: ISource.ISource src),
+	IDataFrameId join4(1: IDataFrameId id, 2: IDataFrameId other, 3: i64 numPartitions, 4: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId distinct(1: IDataFrameId id) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId distinct2a(1: IDataFrameId id, 2: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId distinct2b(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId distinct3(1: IDataFrameId id, 2: i64 numPartitions, 3: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 
 	/*General Action*/
 	i64 reduce(1: IDataFrameId id, 2: ISource.ISource src, 3: ISource.ISource tp) throws (1:IDriverException.IDriverException ex),
