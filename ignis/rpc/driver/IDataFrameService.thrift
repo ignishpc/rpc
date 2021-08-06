@@ -21,14 +21,16 @@ service IDataFrameService{
 	void uncache(1: IDataFrameId id) throws (1:IDriverException.IDriverException ex),
 
 	/*IO*/
-	IDataFrameId repartition(1: IDataFrameId id, 2: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
-	IDataFrameId coalesce(1: IDataFrameId id, 2: i64 numPartitions, 3: bool shuffle) throws (1:IDriverException.IDriverException ex),
 	i64 partitions(1: IDataFrameId id) throws (1:IDriverException.IDriverException ex),
 	void saveAsObjectFile(1: IDataFrameId id, 2: string path, 3: i8 compression) throws (1:IDriverException.IDriverException ex),
 	void saveAsTextFile(1: IDataFrameId id, 2: string path) throws (1:IDriverException.IDriverException ex),
 	void saveAsJsonFile(1: IDataFrameId id, 2: string path, 3: bool pretty) throws (1:IDriverException.IDriverException ex),
 
 	/*General*/
+	IDataFrameId repartition(1: IDataFrameId id, 2: i64 numPartitions, 3: bool preserveOrdering, 4: bool global_) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId partitionByRandom(1: IDataFrameId id, 2: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId partitionByHash(1: IDataFrameId id, 2: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId partitionBy(1: IDataFrameId id, 2: ISource.ISource src, 3: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId map_(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId filter(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId flatmap(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
@@ -44,9 +46,7 @@ service IDataFrameService{
 	IDataFrameId sortBy(1: IDataFrameId id, 2: ISource.ISource src, 3:  bool ascending) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId sortBy3(1: IDataFrameId id, 2: ISource.ISource src, 3:  bool ascending, 4: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId union_(1: IDataFrameId id, 2: IDataFrameId other, 3: bool preserveOrder) throws (1:IDriverException.IDriverException ex),
-	IDataFrameId union4a(1: IDataFrameId id, 2: IDataFrameId other, 3: bool preserveOrder, 4: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
-	IDataFrameId union4b(1: IDataFrameId id, 2: IDataFrameId other, 3: bool preserveOrder, 4: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
-	IDataFrameId union5(1: IDataFrameId id, 2: IDataFrameId other, 3: bool preserveOrder, 4: i64 numPartitions, 5: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId union4(1: IDataFrameId id, 2: IDataFrameId other, 3: bool preserveOrder, 4: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId join(1: IDataFrameId id, 2: IDataFrameId other) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId join3a(1: IDataFrameId id, 2: IDataFrameId other, 3: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId join3b(1: IDataFrameId id, 2: IDataFrameId other, 3: ISource.ISource src),
