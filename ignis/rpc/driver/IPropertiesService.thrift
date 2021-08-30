@@ -14,7 +14,7 @@ service IPropertiesService{
 	string rmProperty(1: i64 id, 2: string key) throws (1:IDriverException.IDriverException ex),
 	bool contains(1: i64 id, 2: string key) throws (1:IDriverException.IDriverException ex),
 	map<string, string> toMap(1: i64 id, 2: bool defaults) throws (1:IDriverException.IDriverException ex),
-	void fromMap(1: i64 id, 2:map<string, string> _map) throws (1:IDriverException.IDriverException ex),
+	void fromMap(1: i64 id, 2:map<string, string> map_) throws (1:IDriverException.IDriverException ex),
 	void load(1: i64 id, 2: string path) throws (1:IDriverException.IDriverException ex),
 	void store(1: i64 id, 2: string path) throws (1:IDriverException.IDriverException ex);
 	void clear(1: i64 id) throws (1:IDriverException.IDriverException ex);

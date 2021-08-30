@@ -6,5 +6,5 @@ namespace go ignis.rpc.driver
 
 exception IDriverException{
 	1: required string message;
-	2: required string _cause;
+	2: required string cause_;
 }
