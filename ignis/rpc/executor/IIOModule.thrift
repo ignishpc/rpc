@@ -19,6 +19,10 @@ service IIOModule{
 
 	i64 partitionApproxSize() throws (1:IExecutorException.IExecutorException ex),
 
+	void plainFile(1: string path, 2: i8 delim) throws (1:IExecutorException.IExecutorException ex),
+
+	void plainFile3(1: string path, 2: i64 minPartitions, 3: i8 delim) throws (1:IExecutorException.IExecutorException ex),
+
 	void textFile(1: string path) throws (1:IExecutorException.IExecutorException ex),
 
 	void textFile2(1: string path, 2: i64 minPartitions) throws (1:IExecutorException.IExecutorException ex),

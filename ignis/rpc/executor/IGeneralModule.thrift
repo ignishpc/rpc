@@ -20,7 +20,7 @@ service IGeneralModule{
 
 	void mapPartitions(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
-	void mapPartitionsWithIndex(1: ISource.ISource src, 2:  bool preservesPartitioning) throws (1:IExecutorException.IExecutorException ex),
+	void mapPartitionsWithIndex(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
 	void mapExecutor(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
