@@ -18,6 +18,8 @@ service IGeneralModule{
 
 	void keyBy(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
+	void mapWithIndex(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
+
 	void mapPartitions(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
 
 	void mapPartitionsWithIndex(1: ISource.ISource src) throws (1:IExecutorException.IExecutorException ex),
@@ -50,7 +52,7 @@ service IGeneralModule{
 
 	void repartition(1: i64 numPartitions, 2: bool preserveOrdering, 3: bool global_) throws (1:IExecutorException.IExecutorException ex),
 
-	void partitionByRandom(1: i64 numPartitions) throws (1:IExecutorException.IExecutorException ex),
+	void partitionByRandom(1: i64 numPartitions, 2: i32 seed) throws (1:IExecutorException.IExecutorException ex),
 
 	void partitionByHash(1: i64 numPartitions) throws (1:IExecutorException.IExecutorException ex),
 

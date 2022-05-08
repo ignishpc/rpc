@@ -28,13 +28,14 @@ service IDataFrameService{
 
 	/*General*/
 	IDataFrameId repartition(1: IDataFrameId id, 2: i64 numPartitions, 3: bool preserveOrdering, 4: bool global_) throws (1:IDriverException.IDriverException ex),
-	IDataFrameId partitionByRandom(1: IDataFrameId id, 2: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId partitionByRandom(1: IDataFrameId id, 2: i64 numPartitions, 3: i32 seed) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId partitionByHash(1: IDataFrameId id, 2: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId partitionBy(1: IDataFrameId id, 2: ISource.ISource src, 3: i64 numPartitions) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId map_(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId filter(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId flatmap(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId keyBy(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
+	IDataFrameId mapWithIndex(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex), 
 	IDataFrameId mapPartitions(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId mapPartitionsWithIndex(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
 	IDataFrameId mapExecutor(1: IDataFrameId id, 2: ISource.ISource src) throws (1:IDriverException.IDriverException ex),
